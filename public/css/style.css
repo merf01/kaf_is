@@ -1,0 +1,177 @@
+
+body{
+	/* background-color: white; */
+	font-family: MyriadPro;
+	background-image: url(../img/background.png);
+	background-size: cover;
+ 	background-repeat: no-repeat;
+
+}
+header{
+display: flex;
+margin-left: auto;
+margin-right: auto;
+/* max-height: 500px; */
+}
+
+.background_img{
+	position:absolute;
+}
+@media  screen and (min-width: 700px){
+	.header_links_flex{
+		font-size: 17px;
+	}
+	.kaf_logo_img{
+		width: 50px;
+		height: 50px;
+	}
+	body{
+		/* background-image: url(../img/back.png); */
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+@media  screen and (min-width: 500px) and (max-width: 699px){
+	.header_links_flex{
+		font-size: 12px;
+	}
+	.kaf_logo_img{
+		width: 22px;
+		height: 22px;
+	}
+	body{
+		/* background-image: url(../img/back.png); */
+		background-size:  contain;
+		background-repeat: no-repeat;
+	}
+}
+@media  screen and (min-width: 300px) and (max-width: 499px){
+	.header_links_flex{
+		font-size: 8px;
+	}
+	.kaf_logo_img{
+		width: 25px;
+		height: 25px;
+	}
+	body{
+		/* background-image: url(../img/back.png); */
+		background-size:  contain;
+		background-repeat: no-repeat;
+	}
+}
+@media  screen and (min-width: 150px) and (max-width: 299px){
+	.header_links_flex{
+		font-size: 5px;
+	}
+	.kaf_logo_img{
+		width: 20px;
+		height: 20px;
+	}
+	body{
+		/* background-image: url(../img/back.png); */
+		background-size:  contain;
+		background-repeat: no-repeat;
+	}
+}
+
+
+.content{
+	border: 2px solid red;
+	margin-top: 250px;
+}
+.wrapper{
+	border: 2px solid green;
+	width: 100%;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.middle_text{
+	font-size: 4vw;
+	display: flex;
+	color: white;
+	justify-content: center;
+	font-family: AnonymousPro;
+	/* position:  relative; */
+	margin-left: auto;
+	margin-right: auto;
+	/* margin-top: 200px; */
+	border: 1px solid grey;
+}
+
+.info_block_flex{
+	/* margin-top: 500px; */
+	display: flex;
+	flex-shrink: 1;
+	flex-flow: row wrap;
+	justify-content:  space-around;
+
+}
+.info_block_item{
+	margin: 2px 5px;
+	display: flex;
+	flex-flow: column;
+	align-content: center;
+	border: 1px double grey;
+}
+
+.info_block_img{
+	/* display: flex; */
+	/* justify-content: center; */
+	margin-left: auto;
+	margin-right: auto;
+	/* width: 100px; */
+	/* height: 100px; */
+	max-width: 100%;
+
+}
+.info_block_item p{
+ margin-left: auto;;
+ margin-right: auto;
+ font-family: AaarghBold;
+ color: grey;
+}
+
+
+@font-face {
+font-family: "MyriadPro";
+src: url("../MyriadPro/MyriadPro-Regular.ttf");
+}
+@font-face {
+font-family: "RonduitCapitals";
+src: url("../fonts/RonduitCapitals/RonduitCapitals-Light.otf");
+}
+@font-face {
+font-family: "Marske";
+src: url("../fonts/Marske/Marske.ttf");
+}
+@font-face {
+font-family: "CasperRegular";
+src: url("../fonts/Casper/CasperRegular/CasperRegular.ttf");
+}
+@font-face {
+font-family: "AaarghRegular";
+src: url("../fonts/Aaargh/AaarghRegular/AaarghRegular.ttf");
+}
+@font-face {
+font-family: "AaarghBold";
+src: url("../fonts/Aaargh/AaarghBold/AaarghBold.ttf");
+}
+@font-face {
+font-family: "AnonymousPro";
+src: url("../fonts/AnonymousPro/AnonymousPro/AnonymousPro.ttf");
+}
+@font-face {
+font-family: "Archive";
+src: url("../fonts/Archive/ArchiveRegular/ArchiveRegular.ttf");
+}
+@font-face {
+font-family: "CasperBold";
+src: url("../fonts/Casper/CasperBold/CasperBold.ttf");
+}
+@font-face {
+font-family: "DaysSans";
+src: url("../fonts/dayssans/dayssansblack.ttf");
+}

@@ -1,0 +1,119 @@
+/*  Цвет текста #BAD6FD
+*/
+.right_block {
+    display: flex;
+    color: #fff3ef !important;
+    justify-content: space-between;
+    /* align-content: flex-end; */
+}
+
+
+.right_block a, a:link,
+a:active,
+a:visited {
+    -webkit-transition: color 0.25s ease-out;
+    -moz-transition: color 0.25s ease-out;
+    -o-transition: color 0.25s ease-out;
+    transition: color 0.25s ease-out;
+    /* color: #EFB22D; */
+    outline: none;
+    text-decoration: none;
+    color: #EFB22D
+}
+a:hover {
+    color: #FF4D48;
+    cursor: pointer;
+}
+
+#content{
+  margin: 100px;
+  max-width:inherit ;
+  min-height: inherit;
+}
+
+#content article{
+  max-width: 1042px;
+}
+
+
+.bcground{
+  border-radius: 5px;
+  z-index: 1;
+  background: white;
+ background: rgba(255,255,255,.1);
+}
+
+#project{
+/* margin-top: 0px; */
+margin-bottom: 100px;
+
+}
+.projects_list{
+  padding: 20px;
+  z-index: 5;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  /* flex-flow: column; */
+  display: inline-block;
+  color: white;
+  font-size: 130%;
+  color: #EFB22D;
+  justify-content: flex-start;
+}
+.projects_list header{
+  /* text-decoration: underline; */
+  min-width: 500px;
+}
+
+.projects_list_content{
+  margin: 25px;
+  max-width: 1042px;
+  min-width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-items:  stretch;
+  /* justify-content: space-between; */
+}
+.projects_list_text{
+  /* flex:2; */
+  min-width: 450px;
+  max-width: 500px;
+  margin-right: 20px;
+  color: #BAD6FD;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+.projects_list_img{
+  /* flex:1; */
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: flex-end;
+  /* justify-content: flex-end; */
+  align-content: stretch;
+  position: relative;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 20px;
+  border: 2px solid white;
+}
+
+.projects_list_img img{
+  max-width: 300px;
+  width: expression(this.width > 500 ? "500px": this.width);
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+.projects_list_img img:hover {
+  filter: drop-shadow(0 0 20px #80B4FC);
+  -webkit-transition: .3s ease-out;
+  -o-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
