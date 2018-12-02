@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/projectsPage', function () {
     return view('projectsPage');
 });
+Route::get('/pageOfProject', function () {
+    return view('pageOfProject');
+});
 //Route::resource("projects","ProjectController");
 Route::resource("projects","ProjectController")->middleware('auth');
 Auth::routes();
