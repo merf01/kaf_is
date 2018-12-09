@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <form action="{{ route('projects.store') }}" method="POST">
+            <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group @if($errors->has('title')) has-error @endif">
@@ -52,22 +52,9 @@
                         <span class="help-block">{{ $errors->first("img1") }}</span>
                        @endif
                     </div>
-                    <div class="form-group @if($errors->has('img2')) has-error @endif">
-                       <label for="img2-field">Img2</label>
-                    <input type="text" id="img2-field" name="img2" class="form-control" value="{{ old("img2") }}"/>
-                       @if($errors->has("img2"))
-                        <span class="help-block">{{ $errors->first("img2") }}</span>
-                       @endif
-                    </div>
-                    <div class="form-group @if($errors->has('img3')) has-error @endif">
-                       <label for="img3-field">Img3</label>
-                    <input type="text" id="img3-field" name="img3" class="form-control" value="{{ old("img3") }}"/>
-                       @if($errors->has("img3"))
-                        <span class="help-block">{{ $errors->first("img3") }}</span>
-                       @endif
-                    </div>
 
-      
+
+
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Create</button>
                     <a class="btn btn-link pull-right" href="{{ route('projects.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>

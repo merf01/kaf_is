@@ -91,61 +91,44 @@
 -->
                 </div>
                 </div>
-                
-           
+
+
              <div class="container">
                <hr class="featurette-divider">
         <div id="content">
             <!-- <div class="bcground"> -->
                 <div class="projects_list">
+                  @if($projects->count())
+
+                      @foreach($projects as $project)
                     <div id="project">
                         <header>
-                             <a href="/pageOfProject" class="a_project"  > Название проекта 1 </a> 
+                             <a href="{{ route('projects.show', $project->id) }}" class="a_project"  > {{$project->title}}  </a>
                         </header>
                         <div class="project_content">
-                              <div class="project_img"> <img src="img/project1.jpg"/>
-                            </div>
+                      <div class="project_img"> <img src="{{asset('/uploads/'.$project->img1)}} "</img>
+
+
+                  </div>
                             <div class="project_text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                               
+                                <p>{{$project->description}}</p>
+
                             </div>
-                         
+
                             </div>
-                    </div>
-                    
-                    <div id="project">
-                        <header>
-                            <a href="/pageOfProject" class="a_project"  >Название проекта 2</a>
-                        </header>
-                   <div class="project_content">
-                              <div class="project_img"> <img src="img/project1.jpg">
-                            </div>
-                            <div class="project_text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                   
-                            </div>
-                         
-                            </div>
-                    </div>
-                    <div id="project">
-                        <header>
-                            <a href="/pageOfProject" class="a_project"  >Название проекта 3</a>
-                        </header>
-             <div class="project_content">
-                              <div class="project_img"> <img src="img/project1.jpg">
-                            </div>
-                            <div class="project_text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                   
-                            </div>
-                         
-                            </div>
-                    </div>
+                              </div>
+                            @endforeach
+
+
+
+
+          @else
+              <h3 class="text-center alert alert-info">Empty!</h3>
+          @endif
+
 
                 </div>
+                {{ $projects->links('paginate') }}
             <!-- </div> -->
         </div>
 </div>
@@ -159,7 +142,7 @@
                         <img id="bg2-2" src="img/el.png" alt="cloud"/>
                         <img id="bg2-3"src="img/el.png" alt="cloud"/>
                         <img id="bg2-4" src="img/el.png" alt="cloud"/>
-                         <img id="bg2-5" src="img/cloud-lg1.png" alt="cloud"/> 
+                         <img id="bg2-5" src="img/cloud-lg1.png" alt="cloud"/>
                     </div>
 -->
 
@@ -170,7 +153,7 @@
                         <img id="bg1-2" src="img/el2.png" alt="cloud"/>
                         <img id="bg1-3" src="img/el2.png" alt="cloud"/>
                         <img id="bg1-4" src="img/el2.png" alt="cloud"/>
-                         <img id="bg1-4" src="img/cloud-lg2.png" alt="cloud"/> 
+                         <img id="bg1-4" src="img/cloud-lg2.png" alt="cloud"/>
                     </div>
 -->
 

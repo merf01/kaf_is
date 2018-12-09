@@ -40,15 +40,7 @@
                 </div>
                     <div class="form-group">
                      <label for="img1">IMG1</label>
-                     <p class="form-control-static">{{$project->img1}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="img2">IMG2</label>
-                     <p class="form-control-static">{{$project->img2}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="img3">IMG3</label>
-                     <p class="form-control-static">{{$project->img3}}</p>
+                     <img class="image.fluid" src="{{asset('/uploads/'.$project->img1)}}" width="400" height="400"</img>
                 </div>
                     <div class="form-group">
                      <label for="project_id">PROJECT_ID</label>

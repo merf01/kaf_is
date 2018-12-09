@@ -14,9 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/projectsPage', function () {
-    return view('projectsPage');
-});
+Route::get('/projectsPage', ['uses' => 'ProjectController@showAllProjects'] );
+
 Route::get('/pageOfProject', function () {
     return view('pageOfProject');
 });

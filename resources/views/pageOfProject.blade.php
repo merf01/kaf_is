@@ -22,7 +22,7 @@
     <script src="{{ URL::asset('js/parallax.js') }}"></script>
 
 
-    <title>Проект такой-то</title>
+    <title>{{$project->title}} </title>
 </head>
 
 <body>
@@ -83,24 +83,24 @@
                 </div>
 
             <div class="cover">
-                <h1 class="cover-heading">НАЗВАНИЕ ПРОЕКТА.</h1>
-                <p class="lead"> Тут краткое описание проекта. Тут краткое описание проекта.Тут краткое описание проекта.Тут краткое описание проекта.</p>
-                
-                
+                <h1 class="cover-heading">{{$project->title}}</h1>
+                <p class="lead">  {{$project->description}}</p>
+
+
                 <!--
                     <p class="lead">
                         <a href="#" class="btn btn-lg btn-default">Learn more</a>
                     </p>
 -->
-              
+
             </div>
-            
+
         </div>
 
 
         <div class="container">
   <hr class="featurette-divider">
-           
+
                <h1 class="cover-heading">Над проектом работали</h1>
             <div class="memberList">
                 <div class="memberItem">
@@ -130,16 +130,7 @@
 
             <div class="projectBody">
                 <div class="projectText">
-                    Тут развернутое описание проекта. Тут развернутое описание проекта.Тут развернутое описание проекта.
-                    Тут развернутое описание проекта. Можно добавить разделы (тема, направление...).
-                    Тут развернутое описание проекта. Тут развернутое описание проекта.Тут развернутое описание проекта.
-                    Тут развернутое описание проекта. Можно добавить разделы (тема, направление...).
-                    Тут развернутое описание проекта. Тут развернутое описание проекта.Тут развернутое описание проекта.
-                    Тут развернутое описание проекта. Можно добавить разделы (тема, направление...).
-                    Тут развернутое описание проекта. Тут развернутое описание проекта.Тут развернутое описание проекта.
-                    Тут развернутое описание проекта. Можно добавить разделы (тема, направление...).
-                    Тут развернутое описание проекта. Тут развернутое описание проекта.Тут развернутое описание проекта.
-                    Тут развернутое описание проекта. Можно добавить разделы (тема, направление...).
+                  <p>{{$project->description}}</p>
 
                 </div>
                 <div class="projectImgContainer">
@@ -167,7 +158,7 @@
                         <img id="bg2-2" src="img/el.png" alt="cloud"/>
                         <img id="bg2-3"src="img/el.png" alt="cloud"/>
                         <img id="bg2-4" src="img/el.png" alt="cloud"/>
-                         <img id="bg2-5" src="img/cloud-lg1.png" alt="cloud"/> 
+                         <img id="bg2-5" src="img/cloud-lg1.png" alt="cloud"/>
                     </div>
 -->
 
@@ -178,7 +169,7 @@
                         <img id="bg1-2" src="img/el2.png" alt="cloud"/>
                         <img id="bg1-3" src="img/el2.png" alt="cloud"/>
                         <img id="bg1-4" src="img/el2.png" alt="cloud"/>
-                         <img id="bg1-4" src="img/cloud-lg2.png" alt="cloud"/> 
+                         <img id="bg1-4" src="img/cloud-lg2.png" alt="cloud"/>
                     </div>
 -->
 

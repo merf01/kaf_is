@@ -37,16 +37,14 @@ class ProjectController extends Controller {
 	 * @return Response
 	 */
 	public function store(Request $request)
-	{
-		$project = new Project();
+	{		$path =	$request->file("img1")->store('','public');
+				$project = new Project();
 
-		$project->title = $request->input("title");
+				$project->title = $request->input("title");
         $project->description = $request->input("description");
         $project->status = $request->input("status");
         $project->video = $request->input("video");
-        $project->img1 = $request->input("img1");
-        $project->img2 = $request->input("img2");
-        $project->img3 = $request->input("img3");
+        $project->img1 = $path;
 
 		$project->save();
 
@@ -59,13 +57,16 @@ class ProjectController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+
+	 /**
 	public function show($id)
 	{
 		$project = Project::findOrFail($id);
 
 		return view('projects.show', compact('project'));
 	}
-
+ */
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -116,6 +117,20 @@ class ProjectController extends Controller {
 		$project->delete();
 
 		return redirect()->route('projects.index')->with('message', 'Item deleted successfully.');
+	}
+/**mine */
+	public function showAllProjects()
+	{
+		$projects = Project::orderBy('id', 'desc')->paginate(5);
+
+		return view('projectsPage', compact('projects'));
+	}
+
+	public function show($id)
+	{
+		$project = Project::findOrFail($id);
+
+		return view('pageOfProject', compact('project'));
 	}
 
 }
