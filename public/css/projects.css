@@ -9,7 +9,9 @@
     color: #fff3ef !important;
     justify-content: space-between;
 }
-
+.a_project {
+    color: #efb22d !important;
+}
 .a_project :hover {
     color: #ffb871;
 
@@ -49,7 +51,7 @@ a:hover {
 
 div #project {
     margin: 20px;
-    background-color: white;
+    background-color: #262a37;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -81,6 +83,7 @@ div #project {
 }
 
 .projects_list {
+   
     /*  position: relative;*/
     /*  background: #f7f5f3;*/
     /* text-decoration: underline; */
@@ -88,7 +91,7 @@ div #project {
     /* max-width: 960px; */
     /*  min-width: 100%;*/
     width: auto;
-    padding: 20px;
+    padding: 10px;
     z-index: 5;
     display: -webkit-flex;
     display: -ms-flex;
@@ -97,7 +100,7 @@ div #project {
     /* flex-flow: column; */
     /* display: inline-block; */
     font-size: 130%;
-    color: #424394 !important;
+    color: white;
     justify-content: center;
 
 }
@@ -133,7 +136,7 @@ div #project {
     width: 300px;
     /* max-width: 500px; */
     /*  margin-right: 20px;*/
-    color: #5b5d99;
+    color: #AFCEF9CC;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -227,7 +230,7 @@ li {
 
 
 .featurette-divider {
-    margin: 80px 0;
+    margin: 10px 0;
     /* Space out the Bootstrap <hr> more */
     /*    width: auto;*/
 }
@@ -260,6 +263,7 @@ hr {
 }
 
 .memberList {
+    margin-top: 70px;
     margin-top: 70px;
     flex-flow: row;
     justify-content: center;

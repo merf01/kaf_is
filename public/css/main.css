@@ -43,6 +43,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+    background-color: #171a22 !important;
 }
 
 ol, ul {
@@ -78,13 +79,14 @@ html {
 }
 
 body {
-    background-image: url(../img/background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+/*    background-image: url(../img/background.png);*/
+    background-color: #171a22;
+/*    background-size: cover;*/
+/*    background-repeat: no-repeat;*/
     overflow-x: hidden;
     height: 4550px;
     line-height: 1.5;
-    color: #80B4FC;
+    color: white;
     font-size: 14px;
     font-family: Arial, sans-serif;
     
@@ -456,10 +458,6 @@ a.next:hover {
     left: 450px;
 }
 
-@font-face {
-    font-family: "AaarghRegular";
-    src: url("../fonts/Aaargh/AaarghRegular/AaarghRegular.ttf");
-}
 
 @font-face {
     font-family: "gardensc";

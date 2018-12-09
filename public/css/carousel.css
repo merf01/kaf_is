@@ -88,16 +88,25 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 10px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
 .featurette-heading {
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1;
   letter-spacing: -1px;
+  color: #EFB22DCC;
 }
 
+.row  {
+  display: flex;
+  justify-content:  center;
+    margin: 30px auto;
+/*     background-color: #262a37; */
+    border-radius: 10px;
+
+}
 
 
 /* RESPONSIVE CSS
@@ -107,6 +116,7 @@ body {
 
   /* Remove the edge padding needed for mobile */
   .marketing {
+    margin: auto;
     padding-right: 0;
     padding-left: 0;
   }
@@ -137,12 +147,12 @@ body {
   }
 
   .featurette-heading {
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 120px;
+    margin-top: 100px;
   }
 }

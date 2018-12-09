@@ -94,7 +94,7 @@
 
 
              <div class="container">
-               <hr class="featurette-divider">
+<!--               <hr class="featurette-divider">-->
         <div id="content">
             <!-- <div class="bcground"> -->
                 <div class="projects_list">
@@ -106,7 +106,7 @@
                              <a href="{{ route('projects.show', $project->id) }}" class="a_project"  > {{$project->title}}  </a>
                         </header>
                         <div class="project_content">
-                      <div class="project_img"> <img src="{{asset('/uploads/'.$project->img1)}} "</img>
+                      <div class="project_img"> <img src="{{asset('/uploads/'.$project->img1)}} ">
 
 
                   </div>
