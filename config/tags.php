@@ -1,4 +1,4 @@
-<?
+
 // function getOptions(){
 //     $type=(isset($_GET['type'])) ? implode($_GET['type'], ',') : null;
 //     $status=(isset($_GET['status']))? implode($_GET['status'], ','):null;
@@ -7,4 +7,3 @@
 //   'type'=>$type,
 //   'status'=>$status
 // );
-}
