@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <!--    <link href="{{ URL::asset('css/carousel.css') }}" rel="stylesheet">-->
 
     <link rel="stylesheet" media="all" href="{{ URL::asset('css/main.css') }}" />
     <link rel="stylesheet" media="all" href="{{ URL::asset('css/projects.css') }}" />
@@ -26,154 +25,118 @@
 </head>
 
 <body>
+              <a name="top"> </a>
 
-    <div id="wrapper">
-
-        <!--
-        <header id="kafedra_info">
-            <div class="header_links_flex">
-                <div class="left_block">
-
-                    <div class="kaf_logo_">
-                        <a href="/">   <img class="kaf_logo_" src="img/kaf-logo.png"> </a>
-                    </div>
-
-                    <div class="kaf_name">
-                        <b> Кафедра <br>
-            Информационные Системы
-          </b>
-                    </div>
-
-                </div>
-
-                <div class="right_block">
-
-                    <div class="right_block_item">
-                        <a href="/projectsPage">  Проекты  |</a>
-                    </div>
-
-                    <div class="right_block_item">
-                        <a>  AR  </a>
-                    </div>
-
-                    <div class="right_block_item">
-                        <a>    VR </a>
-                    </div>
-
-                </div>
-            </div>
-        </header>
--->
-
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-                    <div class="inner">
-                        <h4 class="masthead-brand">
-                            <div class="brandImg"> <img src="img/kaf-logo.png" alt=""></div>
-                          <div class="brandName">  Кафедра <br> Информационные системы </div>
-                        </h4>
+    <div class="masthead clearfix">
+        <div class="inner">
+            <h4 class="masthead-brand">
+                <div class="brandImg"> <img src="img/kaf-logo.png" alt=""></div>
+                <div class="brandName"> <a href="/"> Кафедра <br> Информационные системы </a> </div>
+            </h4>
+            <!--
                         <ul class="nav masthead-nav">
-                            <li><a href="/">Главная</a></li>
+                            <li class="active"><a href="/">Главная</a></li>
                             <li><a href="/projectsPage">Проекты</a></li>
                             <li><a href="#">Раздел</a></li>
                         </ul>
-                    </div>
+-->
+        </div>
+    </div>
+    <div class="site-wrapper">
+
+
+        <div class="site-wrapper-left">
+            <div class="left-menu">
+                <div class="left-menu-item" class="active">
+                    <div class="left-menu-img"> <img src="img/home.png" alt="home"> </div><a href="/"> Главная </a>
                 </div>
+                <div class="left-menu-item">
+                    <div class="left-menu-img"><img src="img/project.png" alt="projects"> </div> <a href="/projectsPage"> Проекты </a>
+                </div>
+                <div class="left-menu-item">
+                    <div class="left-menu-img"> <img src="img/group.png" alt="group"> </div> Разработчики
+                </div>
+            </div>
+        </div>
+        <div class="site-wrapper-inner">
 
-            <div class="cover">
-                <h1 class="cover-heading">{{$project->title}}</h1>
-                <p class="lead">  {{$project->description}}</p>
+            <div class="cover-container">
 
 
-                <!--
+
+                <div class="cover">
+                    <h1 class="cover-heading">{{$project->title}}</h1>
+                    <p class="lead"> {{$project->description}}</p>
+
+
+                    <!--
                     <p class="lead">
                         <a href="#" class="btn btn-lg btn-default">Learn more</a>
                     </p>
 -->
 
-            </div>
-
-        </div>
-
-
-        <div class="container">
-  <hr class="featurette-divider">
-
-               <h1 class="cover-heading">Над проектом работали</h1>
-            <div class="memberList">
-                <div class="memberItem">
-                    <div class="memberImg"> <img src="svg/140x140.svg" alt="Generic placeholder image"> </div>
-                    <div class="memberName">Разработчик 1</div>
-                    <p class="memberDesc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. </p>
-                </div><!-- /.memberItem -->
-
-                <div class="memberItem">
-                    <div class="memberImg"> <img src="svg/140x140.svg" alt="Generic placeholder image"> </div>
-                    <div class="memberName">Разработчик 2</div>
-                    <p class="memberDesc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                </div><!-- /.memberItem -->
-
-                <div class="memberItem">
-                    <div class="memberImg"> <img src="svg/140x140.svg" alt="Generic placeholder image"> </div>
-                    <div class="memberName">Разработчик 3</div>
-                    <p class="memberDesc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. </p>
-                </div><!-- /.memberItem -->
-
-
-            </div><!-- /.row -->
-
-
-            <hr class="featurette-divider">
-
-
-            <div class="projectBody">
-                <div class="projectText">
-                  <p>{{$project->description}}</p>
-
-                </div>
-                <div class="projectImgContainer">
-                    <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
-                    <div class="projectImg">
-                        <img src="svg/index.svg" alt="proj img"> </div>
-                    <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
-                    <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
-                    <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
-
                 </div>
 
             </div>
 
+            <div class="container">
+                <div id="content">
+
+                   
+                   <div class="memberContainer">
+                       <div class="cover-heading"> <h1> Над проектом работали</h1> </div>
+                    <div class="memberList">
+                        <div class="memberItem">
+                            <div class="memberImg"> <img src="svg/140.svg" alt="Generic placeholder image"> </div>
+                            <div class="memberName">Разработчик 1</div>
+                            <p class="memberDesc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. </p>
+                        </div><!-- /.memberItem -->
+
+                        <div class="memberItem">
+                            <div class="memberImg"> <img src="svg/140.svg" alt="Generic placeholder image"> </div>
+                            <div class="memberName">Разработчик 2</div>
+                            <p class="memberDesc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                        </div><!-- /.memberItem -->
+
+                        <div class="memberItem">
+                            <div class="memberImg"> <img src="svg/140.svg" alt="Generic placeholder image"> </div>
+                            <div class="memberName">Разработчик 3</div>
+                            <p class="memberDesc">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. </p>
+                        </div><!-- /.memberItem -->
+
+
+                    </div><!-- /.row -->
+</div>
+
+
+
+                    <div class="projectBody">
+                        <div class="projectText">
+                            <p>{{$project->description}}</p>
+
+                        </div>
+                        <div class="projectImgContainer">
+                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
+                            <div class="projectImg">
+                                <img src="svg/index.svg" alt="proj img"> </div>
+                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
+                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
+                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <footer>
+                    <p class="pull-right"><a href="#top">Back to top</a></p>
+                    <p>&copy; 2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+                </footer>
+            </div>
         </div>
 
     </div>
-    <!-- Parallax foreground -->
-
-
-    <!-- Parallax  midground clouds -->
-    <!--
-                    <div id="parallax-bg2">
-                        <img id="bg2-1" src="img/el.png" alt="cloud"/>
-                        <img id="bg2-2" src="img/el.png" alt="cloud"/>
-                        <img id="bg2-3"src="img/el.png" alt="cloud"/>
-                        <img id="bg2-4" src="img/el.png" alt="cloud"/>
-                         <img id="bg2-5" src="img/cloud-lg1.png" alt="cloud"/>
-                    </div>
--->
-
-    <!-- Parallax  background clouds -->
-    <!--
-                    <div id="parallax-bg1">
-                        <img id="bg1-1" src="img/el2.png" alt="cloud"/>
-                        <img id="bg1-2" src="img/el2.png" alt="cloud"/>
-                        <img id="bg1-3" src="img/el2.png" alt="cloud"/>
-                        <img id="bg1-4" src="img/el2.png" alt="cloud"/>
-                         <img id="bg1-4" src="img/cloud-lg2.png" alt="cloud"/>
-                    </div>
--->
-
-
 </body>
 
 </html>

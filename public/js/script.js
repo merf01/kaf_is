@@ -1,4 +1,3 @@
-
 $(function() {
     var header = document.querySelector("#kafedra_info");
     if(window.location.hash) {
