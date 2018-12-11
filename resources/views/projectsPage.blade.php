@@ -60,21 +60,21 @@
                     <div class="left-menu-img"> <img src="img/group.png" alt="group"> </div> Разработчики
                 </div>
                 <div class="left-menu-item">
-                    <div class="left-menu-img"> <img src="img/filter.png" alt="group"> </div> 
+                    <div class="left-menu-img"> <img src="img/filter.png" alt="group"> </div>
                     <a href="javascript:void(0)" onclick="showHide('filter_form')">  Фильтр </a>
                 </div>
                 <div id="filter_form">
-                <div class="left-menu-filter" class="filters"> 
+                <div class="left-menu-filter" class="filters">
                 <h5> Технология разработки </h5>
                  <div id="tech">
-                     <div class="checkbox"> <label> <input type="checkbox" name="tech[]" value="1"> AR </label></div>
-                     <div class="checkbox"> <label> <input type="checkbox" name="tech[]" value="2"> VR </label></div>
-                     <div class="checkbox"> <label> <input type="checkbox" name="tech[]" value="3"> Мобильное приложение </label></div>
-                     <div class="checkbox"> <label> <input type="checkbox" name="tech[]" value="4"> Десктопное приложение </label></div>
-                     <div class="checkbox"> <label> <input type="checkbox" name="tech[]" value="5"> WEB-приложение </label></div>
+                     <div class="checkbox"> <label> <input type="checkbox" name="type[]" value="1"> AR </label></div>
+                     <div class="checkbox"> <label> <input type="checkbox" name="type[]" value="2"> VR </label></div>
+                     <div class="checkbox"> <label> <input type="checkbox" name="type[]" value="3"> Мобильное приложение </label></div>
+                     <div class="checkbox"> <label> <input type="checkbox" name="type[]" value="4"> Десктопное приложение </label></div>
+                     <div class="checkbox"> <label> <input type="checkbox" name="type[]" value="5"> WEB-приложение </label></div>
                  </div>
                   </div>
-                    <div class="left-menu-filter" class="filters"> 
+                    <div class="left-menu-filter" class="filters">
                 <h5> Статус проекта </h5>
                  <div id="status">
                      <div class="checkbox"> <label> <input type="checkbox" name="status[]" value="1"> Завершен </label></div>
@@ -110,6 +110,7 @@
                         @if($projects->count())
 
                         @foreach($projects as $project)
+
                         <div id="project">
                             <header>
                                 <div class="project_title"> <a href="{{ route('projects.show', $project->id) }}"> {{$project->title}} </a> </div>
