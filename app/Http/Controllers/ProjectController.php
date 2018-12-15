@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Project;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller {
@@ -45,10 +46,13 @@ class ProjectController extends Controller {
         $project->status = $request->input("status");
         $project->video = $request->input("video");
         $project->img1 = $path;
+				$project['slug'] = str_slug($project['title']);
+    		$project['user_id'] = Auth::user()->id;
 
 		$project->save();
 
 		return redirect()->route('projects.index')->with('message', 'Item created successfully.');
+//	return redirect()->route('projects.show')->with('id', $project->id);
 	}
 
 	/**
@@ -96,9 +100,7 @@ class ProjectController extends Controller {
         $project->status = $request->input("status");
         $project->video = $request->input("video");
         $project->img1 = $request->input("img1");
-        $project->img2 = $request->input("img2");
-        $project->img3 = $request->input("img3");
-        $project->project_id = $request->input("project_id");
+      /*  $project->project_id = $request->input("project_id");*/
 
 		$project->save();
 

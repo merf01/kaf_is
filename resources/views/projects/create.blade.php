@@ -52,7 +52,7 @@
                         <span class="help-block">{{ $errors->first("img1") }}</span>
                        @endif
                     </div>
-
+                    
 
 
                 <div class="well well-sm">

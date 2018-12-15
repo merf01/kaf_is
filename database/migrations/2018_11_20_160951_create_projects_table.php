@@ -15,13 +15,14 @@ class CreateProjectsTable extends Migration {
 		Schema::create('projects', function(Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+						$table->string('slug')->nullable();
             $table->text('description');
             $table->string('status');
             $table->string('video')->nullable();
             $table->string('img1')->nullable();
-            $table->string('img2')->nullable();
-            $table->string('img3')->nullable();
+						$table->unsignedInteger('user_id');
             $table->timestamps();
+						$table->foreign('user_id')->references('id')->on('users');
         });
 	}
 
