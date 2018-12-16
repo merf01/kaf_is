@@ -52,7 +52,15 @@
                         <span class="help-block">{{ $errors->first("img1") }}</span>
                        @endif
                     </div>
-                    
+
+                    <div class="form-group @if($errors->has('images')) has-error @endif">
+                       <label for="images-field">Images</label>
+                       <input multiple name="file[]" type="file" id="images-field" accept="image/*" class="form-control" />
+                       @if($errors->has("images"))
+                        <span class="help-block">{{ $errors->first("images") }}</span>
+                       @endif
+                    </div>
+
 
 
                 <div class="well well-sm">

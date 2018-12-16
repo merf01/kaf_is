@@ -82,7 +82,7 @@
             <div class="container">
                 <div id="content">
 
-                   
+
                    <div class="memberContainer">
                        <div class="cover-heading"> <h1> Над проектом работали</h1> </div>
                     <div class="memberList">
@@ -116,13 +116,10 @@
 
                         </div>
                         <div class="projectImgContainer">
-                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
-                            <div class="projectImg">
-                                <img src="svg/index.svg" alt="proj img"> </div>
-                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
-                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
-                            <div class="projectImg"> <img src="svg/index.svg" alt="proj img"> </div>
 
+                              @foreach ($project->images as $image)
+                              <div class="projectImg"> <img src="{{asset('/storage/'.$image)}} ">  </div>
+                                @endforeach
                         </div>
 
                     </div>

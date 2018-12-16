@@ -117,7 +117,7 @@
                             </header>
                             <div class="project_content_bg">
                                 <div class="project_content">
-                                    <div class="project_img"> <img src="{{asset('/uploads/'.$project->img1)}} ">
+                                    <div class="project_img"> <img src="{{asset('/storage/'.$project->img1)}} ">
 
 
                                     </div>
