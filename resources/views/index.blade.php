@@ -2,6 +2,8 @@
 
 <html>
 
+
+
 <head>
     <title>ИС</title>
     <meta charset="utf-8" />
@@ -48,12 +50,12 @@
 
             </div>
         </div>
-        
+
         <div class="site-wrapper-inner">
 
             <div class="cover-container">
 
-    
+
 
                 <div class="cover">
                     <h1 class="cover-heading">Приветственное сообщение.</h1>

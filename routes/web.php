@@ -12,13 +12,15 @@
 */
 
 Route::get('/', function ()    {
-
     return view('index');
 }) ->name('projects.index');
 Route::get('/projectsPage', ['uses' => 'ProjectController@showAllProjects'] );
 
 Route::get('/pageOfProject', function () {
     return view('pageOfProject');
+});
+Route::get('/history', function () {
+  return view('history');
 });
 //Route::resource("projects","ProjectController");
 //Route::resource("projects","ProjectController")->middleware('auth');
