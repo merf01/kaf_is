@@ -18,7 +18,7 @@
 // if (isset($_GET[col])) { $col=$_GET[col]; } else {
    $col=50;
   // }
-$file=file("stat.log");
+$file=file("c:/stat.log");
 if ($col>sizeof($file)) { $col=sizeof($file); }
 echo "Последние <b>".$col."</b> посещений сайта:"; ?>
 
