@@ -40,7 +40,7 @@
                 </div>
                     <div class="form-group">
                      <label for="img1">IMG1</label>
-                     <img class="image.fluid" src="{{asset('/uploads/'.$project->img1)}}" width="400" height="400">
+                     <img class="image.fluid" src="{{asset('/storage/'.$project->img1)}}" width="400" height="400">
                 </div>
                     <div class="form-group">
                      <label for="project_id">PROJECT_ID</label>

@@ -38,7 +38,11 @@ class ProjectController extends Controller {
 	 * @return Response
 	 */
 	public function store(Request $request)
-	{		$path =	$request->file("img1")->store('','public');
+	{		 $path =	$request->file("img1")->store('/uploads','public');
+
+
+
+
 				$project = new Project();
 
 				$project->title = $request->input("title");
@@ -46,8 +50,20 @@ class ProjectController extends Controller {
         $project->status = $request->input("status");
         $project->video = $request->input("video");
         $project->img1 = $path;
+
 				$project['slug'] = str_slug($project['title']);
     		$project['user_id'] = Auth::user()->id;
+
+								 $i = 0;
+								 foreach ($request->file() as $file) {
+                 foreach ($file as $f) {
+									 	$temp[$i]=$f->store('/uploads','public');
+										$f->store('/uploads/min','public');
+										 $i++;
+					}}
+					$project->images=$temp;
+
+
 
 		$project->save();
 
