@@ -17,4 +17,9 @@ class Project extends Model
   // matches /images/2012/12/21/ThisIsTheEndOfTheWorldMaya2112.jpg
   'expires' => 'required|date'
 );
+
+public function comments()
+{
+    return $this->hasMany(Comment::class,'project_id','id');
+}
 }

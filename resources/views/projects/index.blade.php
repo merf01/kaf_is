@@ -21,10 +21,6 @@
                             <th>TITLE</th>
                         <th>DESCRIPTION</th>
                         <th>STATUS</th>
-                        <th>VIDEO</th>
-                        <th>IMG1</th>
-                        <th>IMG2</th>
-                        <th>IMG3</th>
                         <th>PROJECT_ID</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
@@ -37,16 +33,12 @@
                                 <td>{{$project->title}}</td>
                     <td>{{$project->description}}</td>
                     <td>{{$project->status}}</td>
-                    <td>{{$project->video}}</td>
-                    <td>{{$project->img1}}</td>
-                    <td>{{$project->img2}}</td>
-                    <td>{{$project->img3}}</td>
                     <td>{{$project->project_id}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('projects.show', $project->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('projects.edit', $project->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
                                     <form action="{{ route('projects.destroy', $project->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-                                      
+
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</button>
                                     </form>

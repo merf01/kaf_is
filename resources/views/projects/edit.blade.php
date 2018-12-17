@@ -54,7 +54,21 @@
                        @endif
                     </div>
 
-                
+                    @foreach($comments as $comment)
+                      <div class="comment">
+                        <p>{{_user($comment->user_id)->email}}</p>
+                        <p>{{$comment->created_at->format('d-m-Y')}}</p>
+                        <p>{{$comment->comment_text}}</p>
+                        <form action="{{ route('comment.destroy', $comment->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Удалить комментарий</button>
+                        </form>
+
+                      </div>
+                      @endforeach
+
+
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Save</button>
                     <a class="btn btn-link pull-right" href="{{ route('projects.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>

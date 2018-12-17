@@ -22,6 +22,14 @@ Route::get('/pageOfProject', function () {
 Route::get('/history', function () {
   return view('history');
 });
+
+Route::post('', 'CommentController@store')
+    ->name('comments.store');
+
+Route::post('comment/destroy/{id}', 'CommentController@destroy')
+      ->name('comment.destroy')
+      ->middleware('can:destroy-comment');
+    //  ->middleware('can:destroy-comment');
 //Route::resource("projects","ProjectController");
 //Route::resource("projects","ProjectController")->middleware('auth');
 Auth::routes();

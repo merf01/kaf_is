@@ -124,6 +124,39 @@
 
                     </div>
 
+
+
+                  <!--comment section-->
+                  @foreach($comments as $comment)
+                    <div class="comment">
+                      <p>{{_user($comment->user_id)->email}}</p>
+                      <p>{{$comment->created_at->format('d-m-Y')}}</p>
+                      <p>{{$comment->comment_text}}</p>
+
+                    </div>
+                    @endforeach
+
+                    @if (Auth::check())
+
+                  <form action="{{ route('comments.store') }}" method="POST" enctype="multipart/form-data">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="project_id" value="{{$project->id}}">
+
+
+                      <div class="form-group @if($errors->has('comment_text')) has-error @endif">
+                             <label for="comment_text-field">Комментарий</label>
+                          <input type="text" id="comment_text-field" name="comment_text" class="form-control" />
+                             @if($errors->has("comment_text"))
+                              <span class="help-block">{{ $errors->first("comment_text") }}</span>
+                             @endif
+                          </div>
+
+
+                              <button type="submit" class="btn btn-primary">Добавить комментарий</button>
+
+                      </form>
+                      @endif
+                <!--comment section-->
                 </div>
 
                 <footer>

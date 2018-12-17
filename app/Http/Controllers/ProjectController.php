@@ -96,8 +96,8 @@ class ProjectController extends Controller {
 	public function edit($id)
 	{
 		$project = Project::findOrFail($id);
-
-		return view('projects.edit', compact('project'));
+		$comments = $project->comments()->orderBy('created_at')->get();
+		return view('projects.edit', compact('project'),compact('comments'));
 	}
 
 	/**
@@ -147,8 +147,8 @@ class ProjectController extends Controller {
 	public function show($id)
 	{
 		$project = Project::findOrFail($id);
-
-		return view('pageOfProject', compact('project'));
+		$comments = $project->comments()->orderBy('created_at')->get();
+		return view('pageOfProject', compact('project'), compact('comments'));
 	}
 
 }

@@ -40,6 +40,10 @@ class AuthServiceProvider extends ServiceProvider
     Gate::define('destroy-project', function ($user) {
         return $user->hasAccess(['destroy-project']);
     });
+
+    Gate::define('destroy-comment', function ($user) {
+        return $user->hasAccess(['destroy-comment']);
+    });
   //  Gate::define('show-projects', function ($user) {
     //    return $user->inRole('Admin');
 //    });

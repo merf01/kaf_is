@@ -35,6 +35,7 @@ class RolesSeeder extends Seeder
                'destroy-project' => true,
                'show-projects' => true,
                'index-project' => true,
+               'destroy-comment' => true,
 
              ]
          ]);
