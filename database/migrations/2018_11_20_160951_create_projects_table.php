@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration {
             $table->string('status');
             $table->string('video')->nullable();
             $table->string('img1')->nullable();
-						$table->jsonb('images')->default('{}');
+						$table->jsonb('images')->nullable();
 					//	$table->text('images')->nullable();
 						$table->unsignedInteger('user_id');
             $table->timestamps();

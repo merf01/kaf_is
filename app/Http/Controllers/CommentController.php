@@ -17,6 +17,8 @@ class CommentController extends Controller
 
       	$comment->save();
       return redirect()->back();
+
+  //  return _project($comment->project_id)->comments;
     }
 
     public function destroy($id)

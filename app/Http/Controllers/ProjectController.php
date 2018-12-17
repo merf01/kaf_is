@@ -38,7 +38,10 @@ class ProjectController extends Controller {
 	 * @return Response
 	 */
 	public function store(Request $request)
-	{		 $path =	$request->file("img1")->store('/uploads','public');
+	{
+
+		$validatedData = $request->validate(Project::$rules);
+		$path =	$request->file("img1")->store('/uploads','public');
 
 
 
@@ -53,7 +56,7 @@ class ProjectController extends Controller {
 
 				$project['slug'] = str_slug($project['title']);
     		$project['user_id'] = Auth::user()->id;
-
+				$temp=null;
 								 $i = 0;
 								 foreach ($request->file() as $file) {
                  foreach ($file as $f) {
@@ -147,7 +150,7 @@ class ProjectController extends Controller {
 	public function show($id)
 	{
 		$project = Project::findOrFail($id);
-		$comments = $project->comments()->orderBy('created_at')->get();
+		$comments = $project->comments()->orderBy('created_at', 'asc')->get();
 		return view('pageOfProject', compact('project'), compact('comments'));
 	}
 

@@ -12,6 +12,19 @@ if (!function_exists('_user')){
   }
 }
 
+
+if (!function_exists('_project')){
+  function _project ($project_id)
+  {
+    $objProj = \App\Project::find($project_id);
+    if (!$objProj)
+    {
+        return abort(404);
+    }
+    return $objProj;
+  }
+}
+
 /*if (!function_exists('_role')){
   function _role($user_id)
   {

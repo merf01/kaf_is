@@ -23,7 +23,7 @@ Route::get('/history', function () {
   return view('history');
 });
 
-Route::post('', 'CommentController@store')
+Route::post('/comment/add', 'CommentController@store')
     ->name('comments.store');
 
 Route::post('comment/destroy/{id}', 'CommentController@destroy')

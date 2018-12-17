@@ -19,12 +19,38 @@
         !window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')
     </script>
     <script src="{{ URL::asset('js/parallax.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
     <title>{{$project->title}} </title>
+
+    <script>
+    $("#commentform").submit(function(e) {
+     e.preventDefault();
+
+     var formURL = $(this).attr("action");
+     var formmethod = $(this).attr("method");
+     var postData = $(this).serialize();
+
+     $.ajax({
+         type: formmethod,
+         url: formURL,
+         data:postData,
+         cache: false,
+
+         success: function (jqXHR, textStatus, errorThrown) {
+             $("#msj-success").html('Good!').fadeIn();
+         }
+
+     });
+
+     return false;
+ });
+    </script>
 </head>
 
 <body>
+
               <a name="top"> </a>
 
     <div class="masthead clearfix">
@@ -115,13 +141,20 @@
                             <p>{{$project->description}}</p>
 
                         </div>
+
+                        @if (null!=$project->video)
+                        <iframe width="560" height="315" src="{{$project->video}}" frameborder="0" allowfullscreen>
+                        </iframe>
+                        @endif
+
+                          @if (null!=$project->images)
                         <div class="projectImgContainer">
 
                               @foreach ($project->images as $image)
                               <div class="projectImg"> <img src="{{asset('/storage/'.$image)}} ">  </div>
                                 @endforeach
                         </div>
-
+                        @endif
                     </div>
 
 
@@ -138,7 +171,7 @@
 
                     @if (Auth::check())
 
-                  <form action="{{ route('comments.store') }}" method="POST" enctype="multipart/form-data">
+                  <form id="commentform" action="{{ route('comments.store') }}" method="POST" enctype="multipart/form-data">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="project_id" value="{{$project->id}}">
 
@@ -167,6 +200,7 @@
         </div>
 
     </div>
+
 </body>
 
 </html>
