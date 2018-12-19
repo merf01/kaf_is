@@ -23,14 +23,14 @@ class PDevelopersController extends Controller
     //   echo $dev->id;
     // }
 
-	$pdevelopers = PDevelopers::orderBy('id', 'desc')->paginate(10);
+	$pdevelopers = PDevelopers::orderBy('id', 'desc');
 
     // $developers = App\Developer::find(1);
     // $developers=Developer::all();
     // $pdevelopers=$data->getIndex();
 
     // $developers=Developer::orderBy('developer_id');
-    return view('developers.index')->with(compact($pdevelopers)));
+    return view('developers.index', compact($pdevelopers));
 
     }
 }

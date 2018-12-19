@@ -8,9 +8,9 @@ class PDevelopers extends Model
 {
     //
     //
-    // public $table='developers';
+    // public $table='p_developers';
 //     public getIndex(){
-$developers=DB::table('developers')->get();
+$developers=DB::table('p_developers')->get();
 // return $developers;
 // }
 }
