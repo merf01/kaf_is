@@ -21,8 +21,10 @@ Route::get('auth/login', function () {
   return view('auth/login');
 });
 
-Route::get('/developers', function(){
-  return view('developers');
+// Route::get('/developers',);
+//
+Route::get('developers', function(){
+return view('developers');
 });
 
 

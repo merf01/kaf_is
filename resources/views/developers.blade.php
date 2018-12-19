@@ -83,9 +83,13 @@
                 <div id="content">
                     <div class="usersList">
                       <div class="singleUser">
-
+                        @if($pdevelopers->count())
+                        @foreach($pdevelopers as $pdev)
                         <div class="userName">
+                          {{$pdev->id}}
                         </div>
+                        @endforeach
+                        @endif
                       </div>
                     </div>
 </div>
