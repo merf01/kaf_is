@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+// use Lang;
 class HomeController extends Controller
 {
     /**
@@ -21,6 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+//    $home_ = Lang::get('main.main');
+
     public function index()
     {
         return view('home');

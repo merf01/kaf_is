@@ -82,14 +82,14 @@ class ProjectController extends Controller {
 	 */
 
 
-	 /**
-	public function show($id)
+
+	public function show($project_id)
 	{
-		$project = Project::findOrFail($id);
+		$project = Project::findOrFail($project_id);
 
 		return view('projects.show', compact('project'));
 	}
- */
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -147,11 +147,11 @@ class ProjectController extends Controller {
 		return view('projectsPage', compact('projects'));
 	}
 
-	public function show($id)
-	{
-		$project = Project::findOrFail($id);
-		$comments = $project->comments()->orderBy('created_at', 'asc')->get();
-		return view('pageOfProject', compact('project'), compact('comments'));
-	}
+	// public function show($project_id)
+	// {
+	// 	$project = Project::findOrFail($project_id);
+	// 	$comments = $project->comments()->orderBy('created_at', 'asc')->get();
+	// 	return view('pageOfProject', compact('project'), compact('comments'));
+	// }
 
 }

@@ -20,9 +20,7 @@
     <script>
         !window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')
     </script>
- <script>
-        !window.jQuery && document.write('<script src="/js/tags.js"><\/script>')
-    </script>
+
 
     <title>Проекты</title>
 </head>
@@ -91,14 +89,21 @@
 
 
                 <div class="cover">
-                    <h1 class="cover-heading">Что-то про проекты.</h1>
-                    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                    <!-- <h1 class="cover-heading">Что-то про проекты.</h1>
+                    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p> -->
                     <!--
                     <p class="lead">
                         <a href="#" class="btn btn-lg btn-default">Learn more</a>
                     </p>
 -->
+
+                  <div id="slider" class="slider_wrap">
+                  <img src="img/project2.jpg" alt="slide" />
+                  <img src="img/project3.jpg" alt="slide" />
+
+                  </div>
                 </div>
+
             </div>
 
 
@@ -154,6 +159,27 @@
 
         </div>
     </div>
+
+    <script type="text/javascript">
+    $(function asd() {
+    var el = $('#slider img'),
+    indexImg = 1,
+    indexMax = el.length;
+
+    function autoCange () {
+    if (indexMax!=1) {
+    indexImg++;
+    if(indexImg > indexMax) {
+    indexImg = 1;
+    }
+    el.fadeOut(300);
+    el.filter(':nth-child('+indexImg+')').fadeIn(700);
+    }
+    }
+    setInterval(autoCange, 7000);
+    });
+
+    </script>
 
 </body>
 

@@ -1,0 +1,11 @@
+.userList{margin-left:: auto}
+.singleUser{flex-flow:row;align-items:center;margin:auto;align-content:center}
+td{border-style:solid;border-color:grey}
+.userId{width:50px}
+.userName{width:150px}
+html{overflow-y:scroll}
+body{background-color:#171a22;overflow-x:hidden;line-height:1.5;color:#fff;font-size:14px;font-family:Arial,sans-serif}
+a:hover{cursor:pointer}
+.login{width:auto;height:40px;padding:5px;border-radius:5px;border-style:solid;border-color:#fff}
+.login:hover{border-style:double;border-color:#ffc84f}
+@font-face{font-family:gardensc;src:url(../fonts/gardensc/gardenscregular.ttf)}

@@ -21,15 +21,12 @@ Route::get('auth/login', function () {
   return view('auth/login');
 });
 
-// Route::get('/developers',);
-//
-Route::get('developers', function(){
-return view('developers');
-});
+Route::get('/developers',['uses'=>'UserController@getUsers']);
 
-Route::get('/index2', function(){
-return view('index2');
-});
+// Route::get('developers', function(){
+// return view('developers');
+// });
+
 
 Route::post('/comment/add', 'CommentController@store')
     ->name('comments.store');

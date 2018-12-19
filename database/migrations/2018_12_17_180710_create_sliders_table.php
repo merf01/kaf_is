@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevelopersTable extends Migration
+class CreateSlidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateDevelopersTable extends Migration
      */
     public function up()
     {
-        Schema::create('developers', function (Blueprint $table) {
-            $table->increments('developer_id');
-            $table->unsignedInteger('user_id');
-            $table->string('avatar');
+        Schema::create('slides', function (Blueprint $table) {
+            $table->increments('id');
+            $table->boolean('active');
+            $table->integer('weight');
+            $table->string('image');
             $table->timestamps();
-
-            $table->foreign('developer_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateDevelopersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('developers');
+        Schema::dropIfExists('slides');
     }
 }

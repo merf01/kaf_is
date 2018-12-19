@@ -1,5 +1,4 @@
-<?php
- ?>
+
 
 <html>
 <head>
@@ -18,7 +17,7 @@
 // if (isset($_GET[col])) { $col=$_GET[col]; } else {
    $col=50;
   // }
-$file=file("c:/stat.log");
+$file=file("d:/stat.log");
 if ($col>sizeof($file)) { $col=sizeof($file); }
 echo "Последние <b>".$col."</b> посещений сайта:"; ?>
 

@@ -1,4 +1,30 @@
+.userList{
+  /* display: table; */
+  /* width: 100px; */
+  margin-left: : auto;
 
+}
+.singleUser{
+
+  flex-flow: row;
+  align-items: center;
+  margin: auto;
+  align-content: center;
+
+}
+td{
+  border-style: solid;
+  border-color: grey;
+
+}
+.userId{
+  width: 50px;
+
+}
+
+.userName{
+  width: 150px;
+}
 html {
     overflow-y: scroll;
 }

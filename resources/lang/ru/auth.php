@@ -13,14 +13,14 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-     "title" 	=> "Site IS",
- "header_title" => "Kafedra IS",
+    'failed' => 'Введенные данные не соответствуют базе.',
+    'throttle' => 'Слишком много попыток ввода логина. Попробуйте позднее.',
+ "title" 	=> "Сайт ИС",
+ "header_title" => "Кафедра Информационные системы",
  
  
  // левое меню
- "main"	=> "Main",
- "projects" => "Projects",
- "developers"	=> "Developers"
+ "main"	=> "ГЛАВНАЯ",
+ "projects" => "Проекты",
+ "developers"	=> "Разрабочики"
 ];

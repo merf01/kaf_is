@@ -10,7 +10,7 @@ class PDevelopers extends Model
     //
     // public $table='p_developers';
 //     public getIndex(){
-$developers=DB::table('p_developers')->get();
+// $pdevelopers=DB::table('p_developers')->get();
 // return $developers;
 // }
 }

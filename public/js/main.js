@@ -1,3 +1,4 @@
+﻿'use strict';
 function init() {
     
     if (page === 'projectsPage') {
