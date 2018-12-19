@@ -27,6 +27,9 @@ Route::get('developers', function(){
 return view('developers');
 });
 
+Route::get('/index2', function(){
+return view('index2');
+});
 
 Route::post('/comment/add', 'CommentController@store')
     ->name('comments.store');
