@@ -16,9 +16,16 @@ class CommentController extends Controller
       $comment->comment_text = $request->input("comment_text");
 
       	$comment->save();
-      return redirect()->back();
+
+        $data = ['date' => $comment->created_at->format('d-m-Y'), 'user_id' =>_user($comment->user_id)->email, 'text' => $comment->comment_text];
+
+return $data;
+
+  //    return redirect()->back();
 
   //  return _project($comment->project_id)->comments;
+
+
     }
 
     public function destroy($id)

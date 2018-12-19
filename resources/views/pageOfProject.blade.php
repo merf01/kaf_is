@@ -14,39 +14,19 @@
 
     <script src="{{ URL::asset('js/modernizr.custom.37797.js') }}"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
     <script>
         !window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')
     </script>
     <script src="{{ URL::asset('js/parallax.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{URL::asset('js/jquery-1.6.1.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 
     <title>{{$project->title}} </title>
 
-    <script>
-    $("#commentform").submit(function(e) {
-     e.preventDefault();
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-     var formURL = $(this).attr("action");
-     var formmethod = $(this).attr("method");
-     var postData = $(this).serialize();
-
-     $.ajax({
-         type: formmethod,
-         url: formURL,
-         data:postData,
-         cache: false,
-
-         success: function (jqXHR, textStatus, errorThrown) {
-             $("#msj-success").html('Good!').fadeIn();
-         }
-
-     });
-
-     return false;
- });
-    </script>
 </head>
 
 <body>
@@ -80,7 +60,7 @@
                     <div class="left-menu-img"><img src="img/project.png" alt="projects"> </div> <a href="/projectsPage"> Проекты </a>
                 </div>
                 <div class="left-menu-item">
-                    <div class="left-menu-img"> <img src="img/group.png" alt="group"> </div> <a href="/developers"> Разработчики</a>
+                    <div class="left-menu-img"> <img src="img/group.png" alt="group"> </div> Разработчики
                 </div>
             </div>
         </div>
@@ -160,35 +140,41 @@
 
 
                   <!--comment section-->
-                  @foreach($comments as $comment)
-                    <div class="comment">
-                      <p>{{_user($comment->user_id)->email}}</p>
-                      <p>{{$comment->created_at->format('d-m-Y')}}</p>
-                      <p>{{$comment->comment_text}}</p>
-
+                  <div class="container">
+                    <h2>Комментарии</h2>
+                    <div class='row'>
                     </div>
-                    @endforeach
+                    <br />
+                    <div class='row ' id='comments-wrap'>
+                      <table class="table table ">
+                        <thead>
+                        </thead>
+                        <tbody>
+                          @foreach($comments as $comment)
+                          <tr>
+                            <td>{{_user($comment->user_id)->email}}</td>
+                            <td>{{$comment->created_at->format('d-m-Y')}}</td>
+                          </tr>
+                          <tr class='comments_text'>
+                          <td>  {{$comment->comment_text}}</td>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                    </div>
 
-                    @if (Auth::check())
-
-                  <form id="commentform" action="{{ route('comments.store') }}" method="POST" enctype="multipart/form-data">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="project_id" value="{{$project->id}}">
-
-
-                      <div class="form-group @if($errors->has('comment_text')) has-error @endif">
-                             <label for="comment_text-field">Комментарий</label>
-                          <input type="text" id="comment_text-field" name="comment_text" class="form-control" />
-                             @if($errors->has("comment_text"))
-                              <span class="help-block">{{ $errors->first("comment_text") }}</span>
-                             @endif
-                          </div>
-
-
-                              <button type="submit" class="btn btn-primary">Добавить комментарий</button>
-
-                      </form>
-                      @endif
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input type="hidden" id ="project_id" name="project_id" value="{{$project->id}}">
+                        @if (Auth::check())
+                      <input type="text" id="comment_text-field" name="comment_text" class="form-control" />
+                         @if($errors->has("comment_text"))
+                          <span class="help-block">{{ $errors->first("comment_text") }}</span>
+                         @endif
+                    <button type="button" id ="save"class="btn btn-primary btn-lg pull-right " >
+                      Добавить комментарий
+                    </button>
+                        @endif
+                  </div>
                 <!--comment section-->
                 </div>
 
@@ -200,6 +186,34 @@
         </div>
 
     </div>
+    <script>
+
+    $(function() {
+      $('#save').on('click',function(){
+        var project_id = $('#project_id').val();
+        var text = $('#comment_text-field').val();
+        $.ajax({
+          url: '{{ route('comments.store') }}',
+          type: "POST",
+          data: {project_id:project_id,comment_text:text},
+          headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+          },
+          success: function (data) {
+
+            var str = '<tr><td>'+data['user_id']+'</td><td>'+
+            data['date']+'</td></tr><tr><td>'+
+            data['text']+'</td></tr>';
+
+            $('.table > tbody:last').append(str); document.getElementById('comment_text-field').value = ""
+;},
+              error: function (msg) {
+                alert('Ошибка');   }
+              });
+            });
+          })
+
+</script>
 
 </body>
 
