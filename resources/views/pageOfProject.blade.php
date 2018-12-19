@@ -80,7 +80,7 @@
                     <div class="left-menu-img"><img src="img/project.png" alt="projects"> </div> <a href="/projectsPage"> Проекты </a>
                 </div>
                 <div class="left-menu-item">
-                    <div class="left-menu-img"> <img src="img/group.png" alt="group"> </div> Разработчики
+                    <div class="left-menu-img"> <img src="img/group.png" alt="group"> </div> <a href="/developers"> Разработчики</a>
                 </div>
             </div>
         </div>

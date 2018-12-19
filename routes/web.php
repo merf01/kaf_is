@@ -1,27 +1,30 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function ()    {
-    return view('index');
-}) ->name('projects.index');
+// Route::get('/', function ()    {
+//    return view('index');
+// }) ->name('projects.index');
+// echo App::getLocale();
+Route::get('/', ['uses'=>'MainController@show'], function($locale){
+  App::setlocale($locale);
+} );
 Route::get('/projectsPage', ['uses' => 'ProjectController@showAllProjects'] );
 
 Route::get('/pageOfProject', function () {
-    return view('pageOfProject');
+   return view('pageOfProject');
 });
 Route::get('/history', function () {
   return view('history');
 });
+
+Route::get('auth/login', function () {
+  return view('auth/login');
+});
+
+Route::get('/developers', function(){
+  return view('developers');
+});
+
 
 Route::post('/comment/add', 'CommentController@store')
     ->name('comments.store');

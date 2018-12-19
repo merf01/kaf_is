@@ -11,12 +11,25 @@ body {
     color: white;
     font-size: 14px;
     font-family: Arial, sans-serif;
-
+}
 a:hover {
     cursor: pointer;
 }
 
-   
+.login{
+  width: auto;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
+
+}
+.login:hover{
+  border-style: double;
+  border-color: #FFC84F;
+}
+
 @font-face {
     font-family: "gardensc";
     src: url("../fonts/gardensc/gardenscregular.ttf");
