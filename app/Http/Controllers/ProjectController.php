@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Project;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller {
@@ -38,19 +39,39 @@ class ProjectController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		$project = new Project();
 
-		$project->title = $request->input("title");
+		$validatedData = $request->validate(Project::$rules);
+		$path =	$request->file("img1")->store('/uploads','public');
+
+
+
+
+				$project = new Project();
+
+				$project->title = $request->input("title");
         $project->description = $request->input("description");
         $project->status = $request->input("status");
         $project->video = $request->input("video");
-        $project->img1 = $request->input("img1");
-        $project->img2 = $request->input("img2");
-        $project->img3 = $request->input("img3");
+        $project->img1 = $path;
+
+				$project['slug'] = str_slug($project['title']);
+    		$project['user_id'] = Auth::user()->id;
+				$temp=null;
+								 $i = 0;
+								 foreach ($request->file() as $file) {
+                 foreach ($file as $f) {
+									 	$temp[$i]=$f->store('/uploads','public');
+										$f->store('/uploads/min','public');
+										 $i++;
+					}}
+					$project->images=$temp;
+
+
 
 		$project->save();
 
 		return redirect()->route('projects.index')->with('message', 'Item created successfully.');
+//	return redirect()->route('projects.show')->with('id', $project->id);
 	}
 
 	/**
@@ -59,13 +80,16 @@ class ProjectController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+
+	 /**
 	public function show($id)
 	{
 		$project = Project::findOrFail($id);
 
 		return view('projects.show', compact('project'));
 	}
-
+ */
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -75,8 +99,8 @@ class ProjectController extends Controller {
 	public function edit($id)
 	{
 		$project = Project::findOrFail($id);
-
-		return view('projects.edit', compact('project'));
+		$comments = $project->comments()->orderBy('created_at')->get();
+		return view('projects.edit', compact('project'),compact('comments'));
 	}
 
 	/**
@@ -95,9 +119,7 @@ class ProjectController extends Controller {
         $project->status = $request->input("status");
         $project->video = $request->input("video");
         $project->img1 = $request->input("img1");
-        $project->img2 = $request->input("img2");
-        $project->img3 = $request->input("img3");
-        $project->project_id = $request->input("project_id");
+      /*  $project->project_id = $request->input("project_id");*/
 
 		$project->save();
 
@@ -116,6 +138,20 @@ class ProjectController extends Controller {
 		$project->delete();
 
 		return redirect()->route('projects.index')->with('message', 'Item deleted successfully.');
+	}
+/**mine */
+	public function showAllProjects()
+	{
+		$projects = Project::orderBy('id', 'desc')->paginate(5);
+
+		return view('projectsPage', compact('projects'));
+	}
+
+	public function show($id)
+	{
+		$project = Project::findOrFail($id);
+		$comments = $project->comments()->orderBy('created_at', 'asc')->get();
+		return view('pageOfProject', compact('project'), compact('comments'));
 	}
 
 }
